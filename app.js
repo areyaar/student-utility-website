@@ -7,7 +7,7 @@ app.get('/', (req,res)=>{
     res.render('index.ejs');
 })
 app.get('/notes', (req, res)=>{
-    res.send("NoteTaking app in progress!");
+    res.render('notes.ejs');
 })
 app.get('/notes/:id', (req, res)=>{
     const {id} = req.params;
