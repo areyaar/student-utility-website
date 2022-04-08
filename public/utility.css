@@ -1,0 +1,15 @@
+.button-shadow-white{
+    box-shadow: 0 1rem 40px rgba(255, 255, 255, 0.4);
+}
+.button-shadow-white:active{
+    box-shadow: 0 1rem 30px rgba(255, 255, 255, 0.4);
+}
+
+.button-shadow-black{
+    box-shadow: 0 1rem 40px rgba(0, 0, 0, 0.434);
+}
+
+.button-shadow-black:active{
+    box-shadow: 0 1rem 10px rgba(0, 0, 0, 0.434);
+
+}

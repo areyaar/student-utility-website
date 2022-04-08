@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@100&family=Ubuntu&display=swap');
+
+
+@keyframes moveupdown {
+    0%{
+        transform: translateY(0);
+    }
+    25%{
+        transform: translateY(10px);
+    }
+    50%{
+        transform: translateY(0);
+    }
+    75%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+html{
+    font-family: Poppins , montserrat , 'sans serif';
+    font-size: 10px;
+}
+
+
+.main{
+    display: flex;
+    min-height: 100vh;
+    /* height: 100vh;
+    width: 100vw; */
+}
+
+.right{
+    flex: 0 0 75%;
+    background-color: black;
+    color: white;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.left{
+    flex: 0 0 25%;
+    background-image: linear-gradient(to right bottom , #39b396 , #143f35);
+    padding: 0 2rem;
+
+
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+    color: white;
+
+}
+
+.new{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.new-para{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 0.5rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 50px;
+    font-family: Montserrat , 'sans serif';
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    width: 20rem;
+}
+
+.button:hover{
+    transform: translateY(-2px);
+}
+.button:active{
+    transform: translateY(1px);
+    box-shadow: 0 1rem 20px rgba(0, 0, 0, 0.434);
+
+}
+/* =====================================landing page ==============================*/
+
+.right-landing{
+    display: flex;
+    justify-content:space-around;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.landingimg{
+    width: 60rem;
+    animation: moveupdown 3s infinite linear;
+}
+
+.right-left{
+    font-size: 1.7rem;
+}
+
+/* ====================================Form==================================================== */
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 30%;
+    align-items: center;
+
+
+
+}
+
+.input{
+    margin:  .5rem 0;
+    padding: .5rem;
+}
+.input:focus{
+    outline: none;
+}
