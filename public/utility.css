@@ -13,3 +13,35 @@
     box-shadow: 0 1rem 10px rgba(0, 0, 0, 0.434);
 
 }
+
+.heading{
+    text-transform: uppercase;
+    font-family: Montserrat, 'sans-serif';
+    font-weight: bolder;
+    margin-bottom: 2rem;
+}
+
+.flexbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: all 0.3s ease;
+}
+
+
+.hide-left{
+    transform: translateX(-100rem);
+}
+
+.big{
+   margin-bottom: -2rem;
+    display: block;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.up{
+    transform: translateY(-3rem)
+}

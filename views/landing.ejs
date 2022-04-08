@@ -1,39 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoteHub</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="utility.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="utility.css" />
+  </head>
+  <body>
     <main class="main">
-        <div class="left">
-            <h1 class="new">New User?</h1>
-            <p class="new-para">Sign up and start taking unlimited notes for Free</p>
-            <button class="button button-shadow-black">Sign UP</button>
+      <div class="left">
+        <div class="logo-div">
+          <img class="logo" src="logo.png" alt="" />
+          <h1 class="title">
+            <span class="cwhite">Note</span> <span class="corange">Hub</span>
+          </h1>
         </div>
-        <div class="right">
-                <div class="right-landing">
-            <div class="right-left">
-                    <h1>Your Note Taking App :P</h1>
-            </div>
-            <div class="right-right">
-                <img src="hero.png" alt=""  class="landingimg">
-            </div>
+        <div class="flexbox left-content">
+          <h1 class="new">New User?</h1>
+          <p class="new-para">
+            Sign up and start taking unlimited notes for Free
+          </p>
+          <button class="button button-shadow-black btn-sign">Sign UP</button>
         </div>
+        
+        <div class="signup-div">
+            <span class="close"></span>
+          <form class="sign-up-form flexbox up">
+            <h1 class="heading">
+              <span class="big">Sign Up</span> <br />
+              for making unlimited Note
+            </h1>
+            <input
+              type="text"
+              name=""
+              placeholder="Username"
+              class="input input-user"
+            />
+            <input
+              type="password"
+              name=""
+              placeholder="password"
+              class="input input-pass"
+            />
+            <input
+              type="submit"
+              class="button button-shadow-black button-green"
+              value="Sign up"
+            />
+          </form>
+        </div>
+      </div>
+      <div class="right">
+        <div class="right-landing">
+          <div class="right-left">
+            <h1 class="hero-title">Your Note Taking App :P</h1>
             <h1 class="new">Log in To Your Account</h1>
             <p class="new-para">Log in using your username and password!</p>
 
             <form action="" class="login-form">
-                <input type="text" name="" id="" placeholder="Username"   class="input input-user">
-                <input type="password" name="" id="" placeholder="Password"  class="input input-pass">
-                <input type="submit"  class="button button-shadow-white" value="Sign in">
+              <input
+                type="text"
+                name=""
+                placeholder="Username"
+                class="input input-user"
+              />
+              <input
+                type="password"
+                name=""
+                placeholder="password"
+                class="input input-pass"
+              />
+              <input
+                type="submit"
+                class="button button-shadow-white button-green"
+                value="Sign in"
+              />
             </form>
-           
+          </div>
+          <div class="right-right">
+            <img src="hero.png" alt="" class="landingimg" />
+          </div>
         </div>
+      </div>
     </main>
-</body>
+
+    <script src="index.js"></script>
+  </body>
 </html>

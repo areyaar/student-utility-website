@@ -1,7 +1,13 @@
 const express = require('express');
 const app =  express();
+const path = require('path');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const Note = require('./models/notes');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const User = require('./models/user');
+
 
 
 mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -14,11 +20,37 @@ mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, use
     })
 
 
-
-
-app.use(express.static('public'));
-
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
+
+const sessionConfig = {
+    secret: 'thisshouldbeabettersecret!',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+        expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
+        maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+}
+app.use(session(sessionConfig));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.get('/testregister',async (req,res)=>{
+    const user = new User({
+        email:"saketsoni@gmail.com",
+        username:"saket1234"
+    })
+    const newUser = await User.register(user, 'saketsoni');
+    res.send(newUser);
+    
+})
 
 app.get('/', (req,res)=>{
     res.render('landing.ejs');
