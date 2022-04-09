@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&display=swap');
+
+
+*::selection{
+    color: white;
+    background-color: #38af93;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: -2;
+}
+
+.right{
+    background-color: black;
+    flex:0 0 75%;
+    overflow: scroll;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+   
+}
+
+.right::-webkit-scrollbar{
+    display: none;
+}
+
+.left{
+    background-image: linear-gradient(to right bottom , #38af93 , rgb(0, 0, 0));
+    flex:0 0 25%;
+    overflow: scroll;
+}
+.left::-webkit-scrollbar{
+    display: none;
+}
+
+
+.logo-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+
+
+}
+
+
+
+
+.note-title{
+    font-size: 2rem;
+    margin: 3rem 4rem;
+    list-style: none;
+    font-family: Montserrat,poppins , sans-serif;
+    background-color: white;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 4px;
+    transition: all 0.3s;
+    cursor: pointer;
+    
+}
+
+.note-title:hover{
+    transform: scale(1.10);
+    box-shadow: 0 1rem 10px rgba(0, 0, 0, 0.434);   
+}
+
+
+
+/* ================Create New =========================== */
+
+
+.create-new{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    margin: 0 auto;
+    align-items: center;
+    cursor: pointer;
+}
+.create-icon{
+     color: whitesmoke;
+     font-size: 4rem;
+}
+
+.create-label{
+    font-size: 2rem;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+
+   
+}
+
+
+
+
+
+/* ==================== Footer===================================*/
+
+.footer{
+    /* position: absolute;
+    bottom: 0; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    color: white;
+    width: 95%;
+    font-weight: bolder;
+    margin: 0 auto;
+    
+
+
+}
+
+.right-content{
+    padding: 4rem 6rem;
+   
+
+  
+}
+
+
+.title-note{
+    color: white;
+    font-family: Montserrat , Poppins , sans-serif;
+    font-size: 3rem;
+    transition: all 0.3s;
+    padding: 1rem 2rem;
+    width: fit-content;
+    border-radius: 3px;
+    margin-bottom: 3rem;
+    
+
+}
+
+.title-note:hover{
+    box-shadow: 1rem 1rem 30px rgba(255, 255, 255, 0.4);
+
+}
+
+
+.note{
+    background-color: white;
+    font-size: 1.6rem;
+    color: black;
+    font-family: 'Baloo Bhaijaan 2' , 'Monteserrat' , sans-serif;
+    line-height: 2.5rem;
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+
+
+/* +================================buttons=======================
+ */
+
+ .buttons{
+     display: flex;
+     justify-content: flex-end;
+     width: 92%;
+     margin-bottom: auto;
+   
+     
+
+
+ }
+
+ .button{
+    background-color: transparent;
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem 3rem;
+    border: none;
+    cursor: pointer;
+    position: relative;
+
+ }
+
+ .button:active{
+     outline: none;
+     border: none;
+     
+ }
+
+ .button:not(:last-child){
+     margin-right: 4rem;
+   
+
+ }
+
+ .btn-green{
+     outline: 2px solid greenyellow ;
+     border-radius: 3px;
+     position: relative;
+     z-index: 1;
+ }
+
+ .btn-green:active{
+    outline: 2px solid greenyellow ;
+
+ }
+ .btn-red{
+     outline: 2px solid red ;
+     border-radius: 3px;
+ }
+
+ .btn-red:active{
+    border: 2px solid red ;
+
+ }
+ .btn-yellow{
+     outline: 2px solid yellow;
+     border-radius: 3px;
+     position: relative;
+    z-index: 1;
+
+ }
+ .btn-red{
+     outline: 2px solid red;
+     border-radius: 3px;
+     position: relative;
+    z-index: 1;
+
+ }
+
+ .btn-yellow:active{
+    border: 2px solid yellow ;
+
+ }
+
+
+.animate-green{
+    
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: greenyellow;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease;
+    
+}
+.animate-yellow{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: yellow;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease;
+    
+}
+.animate-red{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    background-color: red;
+    height: 100%;
+    z-index: -1;
+    transition: all 0.3s ease;
+    
+}
+
+
+.btn-green:hover  .animate-green{
+width: 100%;
+}
+.btn-yellow:hover  .animate-yellow{
+width: 100%;
+}
+.btn-green:hover{
+    color: black;
+}
+.btn-red:hover  .animate-red{
+width: 100%;
+}
+.btn-red:hover{
+    color: black;
+}
+.btn-yellow:hover{
+    color: black;
+}
+

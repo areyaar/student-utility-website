@@ -3,7 +3,7 @@ const app =  express();
 const path = require('path');
 const mongoose = require('mongoose');
 const session = require('express-session');
-const Note = require('./models/notes');
+const Notes = require('./models/notes');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
@@ -82,14 +82,10 @@ app.post('/register', async (req,res,next)=>{
 })
 
 
-app.get('/notes', (req, res)=>{
-    if(!req.isAuthenticated()){
-        popup.alert({
-            content: 'You need to login first!'
-        });
-        return res.redirect('/');
-    }
-    res.render('notes.ejs');
+app.get('/notes', async (req, res)=>{
+    const notes = await Notes.find({});
+    console.log(notes);
+    res.render('notes.ejs',{notes});
 })
 app.get('/notes/:id', (req, res)=>{
     const {id} = req.params;
@@ -103,9 +99,7 @@ app.get('*', (req,res)=>{
 })
 
 // error handling
-app.use((err,req,res,next)=>{
-    res.send('Something went Wrong!!')
-})
+
 
 app.listen(3000, ()=>{
     console.log("On 3000!");

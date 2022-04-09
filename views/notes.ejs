@@ -4,12 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="note.css">
     <title>Notes</title>
+    <link rel="stylesheet" href="note.css">
+    <link rel="stylesheet" href="utility.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-   <main class="main">
-    <p>haggu </p>
-   </main>
+    <main class="main">
+        <div class="left">
+            <div class="logo-div">
+                <img class="logo" src="logo.png" alt="" />
+                <h1 class="title">
+                  <span class="cwhite">Note</span> <span class="corange">Hub</span>
+                </h1>
+              </div>
+
+              <div class="create-new">
+                <i class="create-icon fa-solid fa-circle-plus" id="create"></i>
+                <label for="create" class="create-label">Create New</label>
+              </div>
+
+              <ul class="title-continer">
+                  <% for(let note of notes) {%> 
+                  <a href="/notes/<%= note._id %> "><li class="note-title"><%= note.title %> </li></a>
+                  <% } %> 
+                  
+              </ul>
+        </div>
+
+        <div class="right">
+            <div class="right-content">
+            <h1 class="title-note">Indian Institute of Technology</h1>
+            <p class="note">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore reiciendis ullam perferendis consequatur, et harum provident dolore eaque atque placeat dignissimos ratione magni. Voluptatibus deleniti molestias architecto aut maiores laboriosam in, quos libero voluptatem facere iste, aspernatur id hic earum, provident eligendi quia est nisi magnam aliquid. Voluptatibus nesciunt obcaecati delectus, repudiandae expedita, excepturi ad iure fugiat sequi fugit quae earum eius illum culpa consequatur quaerat quod. Tempora deserunt porro ut pariatur incidunt vel provident, esse possimus exercitationem, f\ores aliquid facere ipsam? Inventore possimus quibusdam, odit rem quaiure animi minus, unde ratione. Ad quoerferendis dignissimos ea illum distinctio illo dolorum at quo praesentium error inventore tempora pariatur temporibus ducimus magnam aspernatur vel. Dolores sed quis libero laudantium magnam, iure nulla accusantium quam, voluptas, nisi doloribus sint possimus fuga excepturi! Vero ad amet similique vel saepe sapiente minus corrupti autem! Odit blanditiis assumenda earum adipisci, est eos voluptatem debitis eius unde, dolore dignissimos voluptatibus doloremque consequatur minima eum quidem placeat! Facilis voluptates ipsam aut non. Quasi, dolorum earum quisquam recusandae incidunt doloribus et maxime facilis nesciunt error ratione iusto doloremque id nam dolorem iure fugit quod atque facere numquam aut pariatur tempora corrupti. dolorelore lorem5000000 mque cupiditate soluta earum labore ab voluptates quaerat vitae, iure rerum molestias eligendi eveniet optio quas veritatis velit odio odit quia error officiis, officia id. Quia enim nihil iure nulla ipsam? Dolorem eum natus eveniet eius doloremque aliquid expedita sapiente incidunt mollitia quidem?. lorem50000 </p>
+        </div>
+        <div class="buttons">
+            <button class="button btn-yellow">
+                <span class="animate-yellow"></span>
+                Edit</button>
+            <button class="button btn-green">
+                <span class="animate-green"></span>
+                Save</button>
+            <button class="button btn-red">
+                <span class="animate-red"></span>
+                Delete</button>
+        </div>
+            <footer class="footer">
+                <p>Made with <i class="fa-solid fa-heart"></i></p>
+                <p>&copy; to X-MEN Team</p>
+            </footer>        
+       
+        </div>
+    </main>
 </body>
 </html>

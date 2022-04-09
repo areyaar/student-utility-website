@@ -161,37 +161,8 @@ html{
 
 
 
-/* logo */
 
-.logo-div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 2rem;
-    left: 4rem;
-    
 
-}
-
-.logo{
-    width: 5rem;
-    margin-right: 1.5rem;
-}
-
-.title{
-    font-weight: bolder;
-    
-}
-.cwhite{
-    color: white;
-}
-
-.corange{
-    background-color: orange;
-    color: black;
-    padding: 4px;
-}
 
 
 .signup-div{
@@ -224,3 +195,37 @@ html{
         right: 4rem;
         transform:rotate(-45deg);
 }
+
+
+/* =============================logo=========================== */
+
+.logo-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+    
+
+}
+
+.logo{
+    width: 5rem;
+    margin-right: 1.5rem;
+}
+
+.title{
+    font-weight: bolder;
+    
+}
+.cwhite{
+    color: white;
+}
+
+.corange{
+    background-color: orange;
+    color: black;
+    padding: 4px;
+}
+
