@@ -7,6 +7,7 @@ const Note = require('./models/notes');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const User = require('./models/user');
+//const popup = require('popups');
 
 
 
@@ -22,6 +23,8 @@ mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, use
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.urlencoded({extended: true}));
 
 const sessionConfig = {
     secret: 'thisshouldbeabettersecret!',
@@ -44,8 +47,8 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get('/testregister',async (req,res)=>{
     const user = new User({
-        email:"saketsoni@gmail.com",
-        username:"saket1234"
+        
+        username:"saket12334"
     })
     const newUser = await User.register(user, 'saketsoni');
     res.send(newUser);
@@ -55,7 +58,37 @@ app.get('/testregister',async (req,res)=>{
 app.get('/', (req,res)=>{
     res.render('landing.ejs');
 })
+
+//Login route logic
+app.post('/', passport.authenticate('local', {failureRedirect: '/'}), async (req, res)=>{
+    res.render('notes');
+})
+
+//Register route logic
+app.post('/register', async (req,res,next)=>{
+    try{
+        const {email, username, password} = req.body;
+    const user = new User({
+        email,
+        username
+    })
+    const registeredUser = await User.register(user, password);
+    res.send(registeredUser);
+    //res.redirect('/notes');
+    } catch(e){
+        next(e);
+    }
+    
+})
+
+
 app.get('/notes', (req, res)=>{
+    if(!req.isAuthenticated()){
+        popup.alert({
+            content: 'You need to login first!'
+        });
+        return res.redirect('/');
+    }
     res.render('notes.ejs');
 })
 app.get('/notes/:id', (req, res)=>{
@@ -63,16 +96,15 @@ app.get('/notes/:id', (req, res)=>{
 
     res.send(`note number ${id}`);
 })
-app.get('/todo', (req,res)=>{
-    res.send("ToDo app!")
-})
-app.get('/search', (req,res)=>{
-    console.log(req.query);
-    res.send("Hi!");
-})
+
 //Catch all
 app.get('*', (req,res)=>{
     res.send("Webpage does not exist!")
+})
+
+// error handling
+app.use((err,req,res,next)=>{
+    res.send('Something went Wrong!!')
 })
 
 app.listen(3000, ()=>{

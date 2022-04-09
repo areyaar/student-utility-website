@@ -27,21 +27,27 @@
         
         <div class="signup-div">
             <span class="close"></span>
-          <form class="sign-up-form flexbox up">
+          <form class="sign-up-form flexbox up" action="/register" method="POST">
             <h1 class="heading">
               <span class="big">Sign Up</span> <br />
               for making unlimited Note
             </h1>
             <input
               type="text"
-              name=""
+              name="email"
+              placeholder="Email"
+              class="input input-user"
+            />
+            <input
+              type="text"
+              name="username"
               placeholder="Username"
               class="input input-user"
             />
             <input
               type="password"
-              name=""
-              placeholder="password"
+              name="password"
+              placeholder="Password"
               class="input input-pass"
             />
             <input
@@ -59,17 +65,17 @@
             <h1 class="new">Log in To Your Account</h1>
             <p class="new-para">Log in using your username and password!</p>
 
-            <form action="" class="login-form">
+            <form action="/" class="login-form" method="POST">
               <input
                 type="text"
-                name=""
+                name="username"
                 placeholder="Username"
                 class="input input-user"
               />
               <input
                 type="password"
-                name=""
-                placeholder="password"
+                name="password"
+                placeholder="Password"
                 class="input input-pass"
               />
               <input
