@@ -84,13 +84,27 @@ app.post('/register', async (req,res,next)=>{
 
 app.get('/notes', async (req, res)=>{
     const notes = await Notes.find({});
-    console.log(notes);
+    //console.log(notes);
     res.render('notes.ejs',{notes});
 })
-app.get('/notes/:id', (req, res)=>{
-    const {id} = req.params;
 
-    res.send(`note number ${id}`);
+app.get('/notes/:id', async(req,res)=>{
+    const {id} = req.params;
+    const notes = await Notes.find({});
+    const thisNote = await Notes.findById(id).exec();
+    //console.log(noted);
+    res.render('show.ejs',{notes, thisNote});
+})
+app.get('/new', (req,res)=>{
+    res.render('new.ejs');
+})
+app.post('/new', async(req,res)=>{
+    const {title, note} = req.body;
+    //res.send(req.body);
+    const newNote = new Notes({title, note});
+    const noteess= await newNote.save()
+    //console.log(noteess);
+    res.redirect('/notes');
 })
 
 //Catch all

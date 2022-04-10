@@ -59,6 +59,29 @@ html{
 
 
 
+.margin-bottom{
+    margin-bottom: 3rem;
+}
+
+.no-link{
+    text-decoration: none;
+
+}
+
+
+
+
+.logo-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 2rem;
+    left: 4rem;
+    
+
+}
+
 .logo{
     width: 5rem;
     margin-right: 1.5rem;
@@ -66,17 +89,16 @@ html{
 
 .title{
     font-weight: bolder;
-
     
 }
 .cwhite{
     color: white;
-    
 }
 
 .corange{
     background-color: orange;
     color: black;
     padding: 4px;
+    border-radius: 3px;
+    font-family: monteserrat , poppins , sans-serif;
 }
-

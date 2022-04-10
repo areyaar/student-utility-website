@@ -116,6 +116,7 @@ html{
     width: 100%;
     align-items: center;
     margin-bottom: 5rem;
+    padding: 2rem;
 }
 
 .landingimg{
@@ -227,5 +228,121 @@ html{
     background-color: orange;
     color: black;
     padding: 4px;
+    border-radius: 3px;
+    font-family: monteserrat , poppins , sans-serif;
 }
+
+
+
+/*==================================Media Queries =========================== */
+
+
+
+@media screen and (max-width: 1200px){
+    .landingimg{
+        width: 35rem;
+    }
+    .right-landing{
+        justify-content: space-evenly;
+        
+    }
+ 
+    
+}
+
+@media screen and (max-width: 760px){
+
+
+
+
+    .signup-div{
+        display: block !important;
+        padding: 3rem;
+        
+    }
+    .sign-up-form{
+       transform: translateY(0) !important;
+    }
+
+    .left-content{
+        display: none !important;
+    }
+
+    html{
+        font-size: 8px !important;
+    }
+
+    body{
+        background-color: black;
+    }
+
+
+    .main{
+        flex-direction:column-reverse;
+        position: relative;
+     
+    }
+    .left{
+        position:initial !important;
+        width: auto;
+    }
+
+    .right{
+        /* transform:translateY(-14rem); */
+    }
+
+    .right-landing{
+        flex-direction: column-reverse;
+        padding-top: 8rem;
+    }
+
+    .landingimg{
+        width: 90%;
+    }
+
+    .close{
+        display: none;
+    }
+
+
+}
+
+
+@media screen and (max-width:506px) {
+    .hero-title{
+        font-size: 2.4rem;
+    }
+    
+    .new-para{
+        font-size: 1.8rem;
+    }
+    
+}
+
+@media (max-width:400px) {
+
+    
+    .right{
+        height: 100%;
+    }
+    .right-landing{
+        flex-direction: column-reverse; 
+    }
+  
+
+    .landingimg{
+        width: 30rem;
+    }
+
+    .new{
+        font-size: 2.5rem;
+    }
+
+    
+    
+}
+
+
+
+
 

@@ -15,8 +15,7 @@
     display: flex;
     width: 100vw;
     height: 100vh;
-    position: absolute;
-    z-index: -2;
+    position: relative;
 }
 
 .right{
@@ -26,6 +25,8 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
+
 
    
 }
@@ -38,10 +39,13 @@
     background-image: linear-gradient(to right bottom , #38af93 , rgb(0, 0, 0));
     flex:0 0 25%;
     overflow: scroll;
+    transition: all 0.3s ease;
 }
 .left::-webkit-scrollbar{
     display: none;
 }
+
+
 
 
 .logo-div{
@@ -83,7 +87,7 @@
 .create-new{
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    width: 60%;
     margin: 0 auto;
     align-items: center;
     cursor: pointer;
@@ -118,6 +122,7 @@
     width: 95%;
     font-weight: bolder;
     margin: 0 auto;
+    padding-top: 6rem;
     
 
 
@@ -125,6 +130,7 @@
 
 .right-content{
     padding: 4rem 6rem;
+   
    
 
   
@@ -187,11 +193,12 @@
 
  }
 
- .button:active{
-     outline: none;
-     border: none;
-     
+
+ .button::active{
+     outline: none !important;
+     border: none  !important;
  }
+ 
 
  .button:not(:last-child){
      margin-right: 4rem;
@@ -216,26 +223,26 @@
  }
 
  .btn-red:active{
-    border: 2px solid red ;
+    outline: 2px solid red ;
 
  }
  .btn-yellow{
      outline: 2px solid yellow;
      border-radius: 3px;
      position: relative;
-    z-index: 1;
+     z-index: 1;
 
  }
  .btn-red{
      outline: 2px solid red;
      border-radius: 3px;
      position: relative;
-    z-index: 1;
+     z-index: 1;
 
  }
 
  .btn-yellow:active{
-    border: 2px solid yellow ;
+    outline: 2px solid yellow ;
 
  }
 
@@ -297,4 +304,211 @@ width: 100%;
 .btn-yellow:hover{
     color: black;
 }
+
+
+
+.note-edit{
+    width: 95%;
+    height: 70%;
+    display: none;
+    border-radius: 6px;
+    padding: 1rem 2rem;
+    background-color: white;
+    font-size: 1.6rem;
+    color: black;
+    font-family: 'Baloo Bhaijaan 2' , 'Monteserrat' , sans-serif;
+    line-height: 2.5rem;
+    padding: 2rem;
+    border-radius: 6px;
+    margin-bottom: 4rem;
+}
+
+.note-edit::-webkit-scrollbar{
+    display: none;
+}
+
+.note-edit:focus{
+    outline: none;
+}
+
+
+.burger{
+    content: "";
+    display: block;
+    height: .4rem;
+    width: 5rem;
+    background-color: #fefae0;
+    position: relative;
+    z-index: 4;
+    
+}
+.burger::after{
+    content: "";
+    display: block;
+    height: .4rem;
+    width: 5rem;
+    background-color: #fefae0;
+    position: absolute;
+    top: 1.3rem;
+    transition: all 0.3s;
+   
+
+}
+
+.burger::before{
+    content: "";
+    display: block;
+    height: .4rem;
+    width: 5rem;
+    background-color: #fefae0;
+    position: absolute;
+    top: -1.3rem;
+    transition: all 0.3s;
+}
+
+
+.burger-cont.open .burger{
+        height: 0;
+}
+.burger-cont.open .burger::after{
+        transform: rotate(135deg);
+        top: 0;
+}
+.burger-cont.open .burger::before{
+        transform: rotate(-135deg);
+        top: 0;
+}
+
+.burger-cont{
+    background-color: red;
+    display: none;
+   
+   
+}
+
+.burger-cont-super{
+    /* background-color: yellow; */
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    content: "";
+    height: 5rem;
+    width: 5rem;
+   z-index: 4000;
+
+
+}
+
+.right{
+    position: relative;
+}
+
+.burger-cont{
+    position: absolute;
+    top: 5rem;
+    right:2rem;
+}
+
+@media (max-width:1300px) {
+     html{
+         font-size: 8px !important;
+     }
+}
+
+@media (max-width:1000px) {
+    .left{
+        flex: 0 0 0%;
+    }
+
+    .right{
+        flex: 1;
+    }
+
+    .burger-cont{
+        display: block;
+    
+
+
+
+    }
+
+    .main.nav .left{
+       
+        flex:0 0 40%;
+    }
+
+    .main.nav .right{
+        flex:0 0 60%;
+    }
+
+
+    .main.nav .burger{
+        background-color: #fbf8cc;
+    }
+    .main.nav .burger::after{
+        background-color: #fbf8cc;
+    }
+    .main.nav .burger::before{
+        background-color: #fbf8cc;
+    }
+
+    .note-title{
+        background-color: #14213d;
+        color: #fde4cf;
+         box-shadow: 0 1rem 40px rgba(255, 255, 255, 0.4);
+    
+    }
+
+
+}
+
+
+@media (max-width:650px) {
+
+     .main.nav .left{
+       
+        flex:0 0 40%;
+    }
+
+    .main.nav .right{
+        flex:0 0 60%;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .main{
+        position: relative;
+    }
+    .main.nav .left{
+       
+        flex:1;
+    }
+
+    .main.nav .right{
+        flex:0;
+    }
+
+    .left{
+       z-index: 0;
+       
+    }
+    
+    .burger-cont-super{
+        z-index: 400;
+    }
+
+    .note{
+        margin: 2rem;
+
+    }
+}
+
+
+
+
+
+
+
 
