@@ -9,6 +9,8 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const methodOverride = require('method-override');
 const { isLoggedIn } = require('./middleware');
+const { notDeepEqual } = require('assert');
+const { redirect } = require('express/lib/response');
 //const popup = require('popups');
 
 
@@ -117,7 +119,9 @@ app.put('/notes/:id', async (req, res) => {
 })
 //delete a note
 app.delete('/notes/:id', async(req,res)=>{
-    //
+    const {id} = req.params;
+    await Notes.findByIdAndDelete(id);
+    res.redirect('/notes');
 })
 
 //Catch all
