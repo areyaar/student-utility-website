@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<he>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Note</title>
+    <link rel="stylesheet" href="/style/new.css">
+    <link rel="stylesheet" href="/style/utility.css">
+</he>
+<body>
+
+    <main class="main-new">
+        <form action="/notes/<%= thisNote._id %>?_method=PUT" method="POST">
+        <div class="logo-div">
+            <img class="logo" src="img/logo.png" alt="" />
+            <h1 class="title">
+              <span class="cwhite">Note</span> <span class="corange">Hub</span>
+            </h1>
+          </div>
+        <h1 class="title-note">Edit Note</h1>
+        <input type="text" name="title" id=" " class="title-input" placeholder="Title" value="<%= thisNote.title %> ">
+        <textarea name="note" id="" cols="30" rows="10" class="textarea" placeholder="Your Note Here"><%= thisNote.note %></textarea>
+        <div class="wrap">
+            <button class="button">Save Note!</button>
+          </div>  
+        </form>
+    </main>
+</body>
+</html>

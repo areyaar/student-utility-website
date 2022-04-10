@@ -19,10 +19,12 @@
                 </h1>
               </div>
 
-              <div class="create-new">
-                <a href="/new"><i class="create-icon fa-solid fa-circle-plus" id="create"></i></a>
+              <a href="/new">
+                  <div class="create-new">
+                <i class="create-icon fa-solid fa-circle-plus" id="create"></i>
                 <label for="create" class="create-label">Create New</label>
               </div>
+                </a>
 
               <ul class="title-continer">
                   <% for(let note of notes) {%> 
@@ -38,15 +40,15 @@
             <p class="note"><%= thisNote.note %> </p>
         </div>
         <div class="buttons">
-            <button class="button btn-yellow">
+            <a href="/notes/<%= thisNote._id %>/edit"><button class="button btn-yellow">
                 <span class="animate-yellow"></span>
                 Edit</button>
-            <button class="button btn-green">
-                <span class="animate-green"></span>
-                Save</button>
+            </a>   
+            <form action="/notes/<%= thisNote._id %>?_method=DELETE" method="POST">
             <button class="button btn-red">
                 <span class="animate-red"></span>
                 Delete</button>
+            </form>
         </div>
             <footer class="footer">
                 <p>Made with <i class="fa-solid fa-heart"></i></p>
