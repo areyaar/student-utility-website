@@ -13,6 +13,8 @@ const methodOverride = require('method-override');
 const { isLoggedIn } = require('./middleware');
 
 
+const port = process.env.PORT || 3000
+
 
 
 //Mongoose
