@@ -11,9 +11,8 @@ const LocalStrategy = require('passport-local');
 const User = require('./models/user');
 const methodOverride = require('method-override');
 const { isLoggedIn } = require('./middleware');
-const { notDeepEqual } = require('assert');
-const { redirect } = require('express/lib/response');
-//const popup = require('popups');
+
+
 
 
 
@@ -88,19 +87,22 @@ app.post('/register', catchAsync(async (req, res, next) => {
             } res.redirect('/notes');
         })
 }));
+
+//Notes Index Page
 app.get('/notes', isLoggedIn, catchAsync(async (req, res) => {
     const notes = await Notes.find({author : req.user._id});
     res.render('notes.ejs', { notes });
 }));
 
+//Notes Index Page with ID
 app.get('/notes/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const notes = await Notes.find({author : req.user._id});
     const thisNote = await Notes.findById(id).exec();
-    //console.log(noted);
     res.render('show.ejs', { notes, thisNote });
 }));
-//edit form
+
+//Edit form
 app.get('/notes/:id/edit', catchAsync(async (req, res) => {
     const { id } = req.params;
     const thisNote = await Notes.findById(id).exec();
@@ -109,31 +111,36 @@ app.get('/notes/:id/edit', catchAsync(async (req, res) => {
 app.get('/new', (req, res) => {
     res.render('new.ejs');
 });
-//add new
+
+//Add new
 app.post('/new', catchAsync(async (req, res) => {
     const { title, note } = req.body;
-    //res.send(req.body);
     const newNote = new Notes({ title, note });
     newNote.author = req.user._id;
     const noteess = await newNote.save()
     res.redirect('/notes');
 }));
-//edit a note
+
+//Edit a note
 app.put('/notes/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const {note, title} = req.body;
     const newNote = await Notes.findByIdAndUpdate(id,{note , title});
     res.redirect(`/notes/${id}`);
 }));
-//delete a note
+
+//Delete a note
 app.delete('/notes/:id', catchAsync(async(req,res)=>{
     const {id} = req.params;
     await Notes.findByIdAndDelete(id);
     res.redirect('/notes');
 }));
+
 app.get('/error', (req,res)=>{
     res.render('error')
 })
+
+//Logout route
 app.get('/logout', (req,res)=>{
     req.logout();
     res.redirect('/');
@@ -144,12 +151,13 @@ app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404));
 });
 
-// error handling
+//Error handling
 app.use((err,req,res,next)=>{
     const {statusCode = 500, message = 'Something Went Wrong!'} = err;
     res.status(statusCode).send(message);
 });
 
+//Server
 app.listen(3000, () => {
     console.log("On 3000!");
 });
