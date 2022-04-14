@@ -8,6 +8,8 @@
   <title>NoteHub - Login/Signup</title>
   <link rel="stylesheet" href="/style/style.css" />
   <link rel="stylesheet" href="/style/utility.css" />
+  <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
+
 </head>
 
 <body>
@@ -49,9 +51,9 @@
           <p class="new-para">Log in using your username and password!</p>
 
           <form action="/" class="login-form" method="POST">
-            <input type="text" name="username" placeholder="Username" class="input input-user" required />
-            <input type="password" name="password" placeholder="Password" class="input input-pass" required />
-            <input type="submit" class="button button-shadow-white button-green" value="Sign in" />
+            <input type="text" name="username" placeholder="Username" class="input input-user" autocomplete="off" required />
+            <input type="password" name="password" placeholder="Password" class="input input-pass"  autocomplete="off" required />
+            <input type="submit" class="button button-shadow-white button-green" value="Sign in" autocomplete="off"/>
           </form>
         </div>
         <div class="right-right">

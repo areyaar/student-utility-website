@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="/style/note.css">
     <link rel="stylesheet" href="/style/utility.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
 </head>
+
 <body>
     <main class="main">
         <div class="left">
@@ -41,10 +43,12 @@
             <p class="note"><%= notes[0].note %> </p>
         </div>
         <div class="buttons">
-            <a href="/notes/<%= notes[0]._id %>/edit"><button class="button btn-yellow">
+            <button class="button btn-yellow">
+                <a href="/notes/<%= notes[0]._id %>/edit" class="no-link-button">
                 <span class="animate-yellow"></span>
-                Edit</button>
-            </a>
+                Edit
+            </a></button>
+           
             
             <form action="/notes/<%= notes[0]._id %>?_method=DELETE" method="POST">
             <button class="button btn-red">
