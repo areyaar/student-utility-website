@@ -58,6 +58,7 @@ app.get('/', (req, res) => {
 
 //Login route logic
 app.post('/', passport.authenticate('local', { failureRedirect: '/' }), async (req, res) => {
+
     res.redirect('/notes');
 })
 
@@ -70,6 +71,13 @@ app.post('/register', async (req, res, next) => {
             username
         })
         const registeredUser = await User.register(user, password);
+        console.log(registeredUser);
+        const n1 = new Notes({
+            title:'Welcome!',
+            note:'Welcome to NoteHub, This is an Example Note.',
+            author: registeredUser._id
+        })
+        await n1.save();
         req.login(registeredUser, e => {
             if (e) {
                 return next(e);
@@ -81,13 +89,16 @@ app.post('/register', async (req, res, next) => {
     }
 })
 app.get('/notes', isLoggedIn, async (req, res) => {
-    const notes = await Notes.find({});
+
+    const notes = await Notes.find({author : req.user._id});
+    console.log(notes);
+    //res.send("helo guys!");
     res.render('notes.ejs', { notes });
 })
 
 app.get('/notes/:id', async (req, res) => {
     const { id } = req.params;
-    const notes = await Notes.find({});
+    const notes = await Notes.find({author : req.user._id});
     const thisNote = await Notes.findById(id).exec();
     //console.log(noted);
     res.render('show.ejs', { notes, thisNote });
@@ -106,8 +117,9 @@ app.post('/new', async (req, res) => {
     const { title, note } = req.body;
     //res.send(req.body);
     const newNote = new Notes({ title, note });
+    newNote.author = req.user._id;
     const noteess = await newNote.save()
-    //console.log(noteess);
+    console.log(noteess);
     res.redirect('/notes');
 })
 //edit a note
@@ -122,6 +134,10 @@ app.delete('/notes/:id', async(req,res)=>{
     const {id} = req.params;
     await Notes.findByIdAndDelete(id);
     res.redirect('/notes');
+})
+app.get('/logout', (req,res)=>{
+    req.logout();
+    res.redirect('/');
 })
 
 //Catch all

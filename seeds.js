@@ -12,8 +12,9 @@ mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, use
 
 
 const n1 = new Note({
-    title:'Note 2',
-    note:'Testing 2 testing 2'
+    title:'Welcome!',
+    note:'Welcome to NoteHub, This is an Example Note.',
+    author:'6252b476c6c6f54ace666877'
 })
 n1.save()
     .then(e=>{
