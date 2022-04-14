@@ -13,9 +13,8 @@ const methodOverride = require('method-override');
 const { isLoggedIn } = require('./middleware');
 
 
-const port = Process.env.PORT || 3000
 
-
+require('dotenv').config()
 
 //Mongoose
 mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, useUnifiedTopology: true })
@@ -161,6 +160,10 @@ app.use((err,req,res,next)=>{
     if(!err.message) err.message = "Something Went Wrong!"
     res.status(statusCode).render('error', {err});
 });
+
+
+const port = process.env.PORT || 3000
+app.listen(port)
 
 //Server
 // app.listen(3000, () => {
