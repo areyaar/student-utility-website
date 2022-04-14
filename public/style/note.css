@@ -170,6 +170,7 @@
     line-height: 2.5rem;
     padding: 2rem;
     border-radius: 6px;
+    white-space: pre-line;
 }
 
 
