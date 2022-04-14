@@ -15,7 +15,7 @@ const { isLoggedIn } = require('./middleware');
 
 
 
-
+//Mongoose
 mongoose.connect('mongodb://localhost:27017/notes', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log("MONGO CONNECTION OPEN")
@@ -108,6 +108,8 @@ app.get('/notes/:id/edit', catchAsync(async (req, res) => {
     const thisNote = await Notes.findById(id).exec();
     res.render('edit.ejs', { thisNote });
 }));
+
+//New Note Form
 app.get('/new', (req, res) => {
     res.render('new.ejs');
 });
@@ -153,8 +155,9 @@ app.all('*', (req, res, next) => {
 
 //Error handling
 app.use((err,req,res,next)=>{
-    const {statusCode = 500, message = 'Something Went Wrong!'} = err;
-    res.status(statusCode).send(message);
+    const {statusCode = 500} = err;
+    if(!err.message) err.message = "Something Went Wrong!"
+    res.status(statusCode).render('error', {err});
 });
 
 //Server

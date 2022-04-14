@@ -5,17 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Note</title>
-    <link rel="stylesheet" href="/style/new.css">
+
     <link rel="stylesheet" href="/style/utility.css">
+    <link rel="stylesheet" href="/style/error.css">
   <link rel="shortcut icon" href="/img/favicon.png" type="image/png">
 
 </he>
 
-<body>
+<body class="body">
 
     <main class="main-new">
         
-            <div>saket sonii hasoihfdafdskjnfdsakn</div>
+          <a href="/" class="logo-div link">
+            <img class="logo" src="/img/logo.png" alt="" />
+            <h1 class="title">
+              <span class="cwhite">Note</span> <span class="corange">Hub</span>
+            </h1>
+        </a>
+
+        <h1 class="error-title">Error</h1>
+    
+
+        <div class="error-message">
+          <h1 class="title-note"><%= err.message %> </h1>
+        </div>
+      
         
     </main>
 </body>

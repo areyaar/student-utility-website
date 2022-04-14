@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main-new{
+    background-image: linear-gradient(to right bottom, #35a68b, black);
+    padding: 5% 10%;
+    position: relative;
+}
+
+.body::-webkit-scrollbar{
+  display: none;
+}
+
+
+.link{
+    text-decoration: none;
+}
+
+
+.error-title{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: bolder;
+    color: whitesmoke;
+
+}
+
+.error-message{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1rem;
+   
+}
+
+.title-note{
+    background-color: white;
+    border-radius: 3px;
+    padding: 1rem 2rem;
+}
