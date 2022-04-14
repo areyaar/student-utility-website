@@ -13,23 +13,23 @@
     <main class="main">
         <div class="left">
             <div class="logo-div">
-                <img class="logo" src="img/logo.png" alt="" />
+                <img class="logo" src="/img/logo.png" alt="" />
                 <h1 class="title">
                   <span class="cwhite">Note</span> <span class="corange">Hub</span>
                 </h1>
               </div>
 
               <div class="create-new">
-                <a href="/new"><i class="create-icon fa-solid fa-circle-plus" id="create"></i></a>
+                <a href="/new" class="link"><i class="create-icon fa-solid fa-circle-plus" id="create"></i></a>
                 <label for="create" class="create-label">Create New</label>
                 
               </div>
-              <a href="/logout">Logout</a>
+    
               
 
               <ul class="title-continer">
                   <% for(let note of notes) {%> 
-                  <a href="/notes/<%= note._id %>"><li class="note-title"><%= note.title %> </li></a>
+                  <a href="/notes/<%= note._id %>"  class="link"><li class="note-title "><%= note.title %> </li></a>
                   <% } %> 
                   
               </ul>
@@ -52,12 +52,24 @@
                 Delete</button>
             </form>
         </div>
+
+        <a href="/logout" class="logout"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
             <footer class="footer">
                 <p>Made with <i class="fa-solid fa-heart"></i></p>
                 <p>&copy; to X-MEN Team</p>
-            </footer>        
-       
+            </footer>           
         </div>
+
+        <div class="burger-cont-super"></div>
+        <div class="burger-cont">
+    <span class="burger"></span>
+</div>
+
+
     </main>
+
+    <script src="/js/note.js"></script>
+
 </body>
 </html>

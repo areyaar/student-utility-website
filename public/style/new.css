@@ -9,7 +9,7 @@
 .main-new{
     background-image: linear-gradient(to right bottom, #35a68b, black);
     width: 100vw;
-    height: 110vh;
+    height: 125vh;
     padding: 5% 10%;
     position: relative;
 }

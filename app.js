@@ -55,7 +55,11 @@ passport.deserializeUser(User.deserializeUser());
 
 //Login/Signup Page
 app.get('/', (req, res) => {
-    res.render('landing.ejs');
+    if(!req.isAuthenticated()){
+        return res.render('landing.ejs');
+    }
+    res.redirect('/notes');
+    
 });
 
 //Login route logic
@@ -127,6 +131,9 @@ app.delete('/notes/:id', catchAsync(async(req,res)=>{
     await Notes.findByIdAndDelete(id);
     res.redirect('/notes');
 }));
+app.get('/error', (req,res)=>{
+    res.render('error')
+})
 app.get('/logout', (req,res)=>{
     req.logout();
     res.redirect('/');

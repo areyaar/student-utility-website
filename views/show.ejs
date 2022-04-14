@@ -13,23 +13,23 @@
     <main class="main">
         <div class="left">
             <div class="logo-div">
-                <img class="logo" src="img/logo.png" alt="" />
+                <img class="logo" src="/img/logo.png" alt="" />
                 <h1 class="title">
                   <span class="cwhite">Note</span> <span class="corange">Hub</span>
                 </h1>
               </div>
 
-              <a href="/new">
+              <a href="/new" class="link">
                   <div class="create-new">
                 <i class="create-icon fa-solid fa-circle-plus" id="create"></i>
                 <label for="create" class="create-label">Create New</label>
               </div>
                 </a>
-                <a href="/logout">Logout</a>
+            
 
               <ul class="title-continer">
                   <% for(let note of notes) {%> 
-                  <a href="/notes/<%= note._id %>  "><li class="note-title"><%= note.title %> </li></a>
+                  <a href="/notes/<%= note._id %>  " class="link"><li class="note-title"><%= note.title %> </li></a>
                   <% } %> 
                   
               </ul>
@@ -41,22 +41,38 @@
             <p class="note"><%= thisNote.note %> </p>
         </div>
         <div class="buttons">
-            <a href="/notes/<%= thisNote._id %>/edit"><button class="button btn-yellow">
+           <button class="button btn-yellow">
+            <a href="/notes/<%= thisNote._id %>/edit" class="no-link-button">
                 <span class="animate-yellow"></span>
-                Edit</button>
-            </a>   
+                Edit
+            </a> </button>
+             
             <form action="/notes/<%= thisNote._id %>?_method=DELETE" method="POST">
             <button class="button btn-red">
                 <span class="animate-red"></span>
                 Delete</button>
             </form>
         </div>
+
+        <a href="/logout" class="logout"> <i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+
             <footer class="footer">
                 <p>Made with <i class="fa-solid fa-heart"></i></p>
                 <p>&copy; to X-MEN Team</p>
             </footer>        
        
         </div>
+
+
+        <div class="burger-cont-super"></div>
+        <div class="burger-cont">
+    <span class="burger"></span>
+</div>
+
+
     </main>
+
+    <script src="/js/note.js"></script>
 </body>
 </html>

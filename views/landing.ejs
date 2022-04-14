@@ -1,102 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteHub - Login/Signup</title>
-    <link rel="stylesheet" href="/style/style.css" />
-    <link rel="stylesheet" href="/style/utility.css" />
-  </head>
-  <body>
-    <main class="main">
-      <div class="left">
-        <div class="logo-div">
-          <img class="logo" src="img/logo.png" alt="" />
-          <h1 class="title">
-            <span class="cwhite">Note</span> <span class="corange">Hub</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoteHub - Login/Signup</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="stylesheet" href="/style/utility.css" />
+</head>
+
+<body>
+  <main class="main">
+    <div class="left">
+      <div class="logo-div">
+        <img class="logo" src="img/logo.png" alt="" />
+        <h1 class="title">
+          <span class="cwhite">Note</span> <span class="corange">Hub</span>
+        </h1>
+      </div>
+      <div class="flexbox left-content">
+        <h1 class="new">New User?</h1>
+        <p class="new-para">
+          Sign up and start taking unlimited notes for Free
+        </p>
+        <button class="button button-shadow-black btn-sign">Sign UP</button>
+      </div>
+
+      <div class="signup-div">
+        <span class="close"></span>
+        <form class="sign-up-form flexbox up" action="/register" method="POST">
+          <h1 class="heading">
+            <span class="big">Sign Up</span> <br />
+            for making unlimited Notes
           </h1>
-        </div>
-        <div class="flexbox left-content">
-          <h1 class="new">New User?</h1>
-          <p class="new-para">
-            Sign up and start taking unlimited notes for Free
-          </p>
-          <button class="button button-shadow-black btn-sign">Sign UP</button>
-        </div>
-        
-        <div class="signup-div">
-            <span class="close"></span>
-          <form class="sign-up-form flexbox up" action="/register" method="POST">
-            <h1 class="heading">
-              <span class="big">Sign Up</span> <br />
-              for making unlimited Notes
-            </h1>
-            <input
-              type="text"
-              name="email"
-              placeholder="Email"
-              class="input input-user"
-              required
-            />
-            <input
-              type="text"
-              name="username"
-              placeholder="Username"
-              class="input input-user"
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              class="input input-pass"
-              required
-            />
-            <input
-              type="submit"
-              class="button button-shadow-black button-green"
-              value="Sign up"
-            />
+          <input type="text" name="email" placeholder="Email" class="input input-user" required />
+          <input type="text" name="username" placeholder="Username" class="input input-user" required />
+          <input type="password" name="password" placeholder="Password" class="input input-pass" required />
+          <input type="submit" class="button button-shadow-black button-green" value="Sign up" />
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <div class="right-landing">
+        <div class="right-left">
+          <h1 class="hero-title">Your Note Taking App :P</h1>
+          <h1 class="new">Log in To Your Account</h1>
+          <p class="new-para">Log in using your username and password!</p>
+
+          <form action="/" class="login-form" method="POST">
+            <input type="text" name="username" placeholder="Username" class="input input-user" required />
+            <input type="password" name="password" placeholder="Password" class="input input-pass" required />
+            <input type="submit" class="button button-shadow-white button-green" value="Sign in" />
           </form>
         </div>
-      </div>
-      <div class="right">
-        <div class="right-landing">
-          <div class="right-left">
-            <h1 class="hero-title">Your Note Taking App :P</h1>
-            <h1 class="new">Log in To Your Account</h1>
-            <p class="new-para">Log in using your username and password!</p>
-
-            <form action="/" class="login-form" method="POST">
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                class="input input-user"
-                required
-              />
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                class="input input-pass"
-                required
-              />
-              <input
-                type="submit"
-                class="button button-shadow-white button-green"
-                value="Sign in"
-              />
-            </form>
-          </div>
-          <div class="right-right">
-            <img src="img/hero.png" alt="" class="landingimg" />
-          </div>
+        <div class="right-right">
+          <img src="img/hero.png" alt="" class="landingimg" />
         </div>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <script src="js/index.js"></script>
-  </body>
+  <script src="js/index.js"></script>
+</body>
+
 </html>

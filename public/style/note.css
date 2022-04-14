@@ -11,6 +11,8 @@
     padding: 0;
 }
 
+
+
 .main{
     display: flex;
     width: 100vw;
@@ -411,6 +413,42 @@ width: 100%;
     right:2rem;
 }
 
+
+
+
+.link{
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: rgb(47, 46, 46);
+
+}
+
+
+
+.logout{
+    color: white;
+    position: absolute;
+    top: 1rem;
+    z-index: 4000;
+    right: 3rem;
+    display: block;
+    font-size: 2rem;
+    text-decoration: none;
+
+    
+
+}
+
+.no-link-button{
+    color: white;
+    text-decoration: none;
+}
+
+.no-link-button:hover{
+    color: black;
+}
+
+
 @media (max-width:1300px) {
      html{
          font-size: 8px !important;
@@ -424,6 +462,7 @@ width: 100%;
 
     .right{
         flex: 1;
+        padding-top: 4rem;
     }
 
     .burger-cont{
@@ -455,10 +494,18 @@ width: 100%;
     }
 
     .note-title{
+    color: rgb(51, 50, 50);
         background-color: #14213d;
         color: #fde4cf;
          box-shadow: 0 1rem 40px rgba(255, 255, 255, 0.4);
     
+    }
+
+
+    .logout{
+        position: absolute;
+        right: 8.5rem;
+        top: 3.5rem;
     }
 
 
@@ -506,11 +553,4 @@ width: 100%;
 
     }
 }
-
-
-
-
-
-
-
 
