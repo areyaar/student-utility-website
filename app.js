@@ -13,7 +13,7 @@ const methodOverride = require('method-override');
 const { isLoggedIn } = require('./middleware');
 
 
-const port = process.env.PORT || 3000
+const port = Process.env.PORT || 3000
 
 
 
@@ -163,6 +163,6 @@ app.use((err,req,res,next)=>{
 });
 
 //Server
-app.listen(3000, () => {
-    console.log("On 3000!");
-});
+// app.listen(3000, () => {
+//     console.log("On 3000!");
+// });
