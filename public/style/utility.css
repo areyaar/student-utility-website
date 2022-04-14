@@ -73,11 +73,14 @@ html{
 
 .logo-div{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    width: 50%;
     align-items: center;
-    position: absolute;
+    margin-bottom: 3rem;
+    /* position: absolute;
     top: 2rem;
-    left: 4rem;
+    left: 4rem; */
+   
     
 
 }

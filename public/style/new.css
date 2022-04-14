@@ -11,6 +11,7 @@
     width: 100vw;
     height: 110vh;
     padding: 5% 10%;
+    position: relative;
 }
 
 .title-note{
@@ -127,6 +128,9 @@
     animation: none;
     display: none;
   }
+
+
+  
   
   @keyframes ring {
     0% {
@@ -157,6 +161,22 @@
       }
       .title-input{
         font-size: 6rem;
+    }
+
+
+    .wrap{
+        transform: scale(0.4);
+    }
+
+    .textarea{
+        margin-bottom: 8rem;
+    }
+    .title-input{
+        font-size: 3rem;
+    }
+
+    .main-new{
+        padding: 4rem;
     }
   }
   
