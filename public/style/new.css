@@ -55,7 +55,7 @@
     line-height: 2.5rem;
     padding: 2rem;
     border-radius: 6px;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
 }
 
 .textarea:focus{
@@ -139,7 +139,14 @@
   .link{
    text-decoration: none;
   }
-
+  .linknotes{
+    color: azure;
+    font-size: large;
+    text-decoration: none;
+  }
+  label:hover{
+    cursor:pointer;
+  }
 
   .toggle-password {
     float: right;
