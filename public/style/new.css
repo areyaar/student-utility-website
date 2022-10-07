@@ -10,7 +10,7 @@
     background-image: linear-gradient(to right bottom, #35a68b, black);
     width: 100vw;
 
-    height: 125vh;
+    height: 100vh;
     padding: 5% 10%;
     position: relative;
 }
@@ -55,7 +55,7 @@
     line-height: 2.5rem;
     padding: 2rem;
     border-radius: 6px;
-    margin-bottom: 8rem;
+    margin-bottom: 5rem;
 }
 
 .textarea:focus{
