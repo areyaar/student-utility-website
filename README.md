@@ -4,7 +4,7 @@
 
 <br>
 
-<p>This Web App is designed with the help of HTML , CSS and JavaScript for the frontend Purpose and for the backend the technology that we have used is node.js , express.js and mongodb. all the codes on the website is being written by our team members X-Men and the rights of it is reserved to the team X-Men :-) </p>
+<p>This Web App is designed with the help of HTML , CSS and JavaScript for the frontend Purpose and for the backend the technology that we have used is node.js , express.js and mongodb. </p>
 
 ## Purpose of this WebPage
 
@@ -27,4 +27,3 @@
 
 ## NoteHub - Create Unlimited Notes
 
-### Copyright to X-Men 
